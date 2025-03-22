@@ -1,28 +1,155 @@
 -- Empty the table before inserting new data
 DELETE
-FROM customers;
+FROM
+    customers;
 
 -- Insert new records
-INSERT INTO customers (customer_id, first_name, last_name, email, phone_number)
-VALUES (1, 'John', 'Doe', 'john.doe@example.com', '555-1234'),
-       (2, 'Jane', 'Smith', 'jane.smith@example.com', '555-5678'),
-       (3, 'Robert', 'Johnson', 'robert.johnson@example.com', '555-9876'),
-       (4, 'Bob', 'Miller', 'bob.miller@example.com', '555-2713'),
-       (5, 'Alice', 'Walker', 'alice.walker@example.com', '555-1235'),
-       (6, 'Charlie', 'Davis', 'charlie.davis@example.com', '555-1236'),
-       (7, 'David', 'Martinez', 'david.martinez@example.com', '555-1237'),
-       (8, 'Eva', 'Wilson', 'eva.wilson@example.com', '555-1238'),
-       (9, 'Frank', 'Taylor', 'frank.taylor@example.com', '555-1239'),
-       (10, 'Grace', 'Anderson', 'grace.anderson@example.com', '555-1240'),
-       (11, 'Henry', 'Thomas', 'henry.thomas@example.com', '555-1241'),
-       (12, 'Ivy', 'Jackson', 'ivy.jackson@example.com', '555-1242'),
-       (13, 'Jack', 'White', 'jack.white@example.com', '555-1243'),
-       (14, 'Kathy', 'Harris', 'kathy.harris@example.com', '555-1244'),
-       (15, 'Leo', 'Young', 'leo.young@example.com', '555-1245'),
-       (16, 'Mona', 'King', 'mona.king@example.com', '555-1246'),
-       (17, 'Nina', 'Scott', 'nina.scott@example.com', '555-1247'),
-       (18, 'Oscar', 'Green', 'oscar.green@example.com', '555-1248'),
-       (19, 'Paul', 'Adams', 'paul.adams@example.com', '555-1249'),
-       (20, 'Quincy', 'Baker', 'quincy.baker@example.com', '555-1250'),
-       -- Add more records as needed
-       (1000, 'Emily', 'Brown', 'emily.brown@example.com', '555-0001');
+INSERT
+    INTO
+        customers(
+            customer_id,
+            first_name,
+            last_name,
+            email,
+            phone_number
+        )
+    VALUES(
+        1,
+        'John',
+        'Doe',
+        'john.doe@example.com',
+        '555-1234'
+    ),
+    (
+        2,
+        'Jane',
+        'Smith',
+        'jane.smith@example.com',
+        '555-5678'
+    ),
+    (
+        3,
+        'Robert',
+        'Johnson',
+        'robert.johnson@example.com',
+        '555-9876'
+    ),
+    (
+        4,
+        'Bob',
+        'Miller',
+        'bob.miller@example.com',
+        '555-2713'
+    ),
+    (
+        5,
+        'Alice',
+        'Walker',
+        'alice.walker@example.com',
+        '555-1235'
+    ),
+    (
+        6,
+        'Charlie',
+        'Davis',
+        'charlie.davis@example.com',
+        '555-1236'
+    ),
+    (
+        7,
+        'David',
+        'Martinez',
+        'david.martinez@example.com',
+        '555-1237'
+    ),
+    (
+        8,
+        'Eva',
+        'Wilson',
+        'eva.wilson@example.com',
+        '555-1238'
+    ),
+    (
+        9,
+        'Frank',
+        'Taylor',
+        'frank.taylor@example.com',
+        '555-1239'
+    ),
+    (
+        10,
+        'Grace',
+        'Anderson',
+        'grace.anderson@example.com',
+        '555-1240'
+    ),
+    (
+        11,
+        'Henry',
+        'Thomas',
+        'henry.thomas@example.com',
+        '555-1241'
+    ),
+    (
+        12,
+        'Ivy',
+        'Jackson',
+        'ivy.jackson@example.com',
+        '555-1242'
+    ),
+    (
+        13,
+        'Jack',
+        'White',
+        'jack.white@example.com',
+        '555-1243'
+    ),
+    (
+        14,
+        'Kathy',
+        'Harris',
+        'kathy.harris@example.com',
+        '555-1244'
+    ),
+    (
+        15,
+        'Leo',
+        'Young',
+        'leo.young@example.com',
+        '555-1245'
+    ),
+    (
+        16,
+        'Mona',
+        'King',
+        'mona.king@example.com',
+        '555-1246'
+    ),
+    (
+        17,
+        'Nina',
+        'Scott',
+        'nina.scott@example.com',
+        '555-1247'
+    ),
+    (
+        18,
+        'Oscar',
+        'Green',
+        'oscar.green@example.com',
+        '555-1248'
+    ),
+    (
+        19,
+        'Paul',
+        'Adams',
+        'paul.adams@example.com',
+        '555-1249'
+    ),
+    (
+        20,
+        'Quincy',
+        'Baker',
+        'quincy.baker@example.com',
+        '555-1250'
+    ), -- Add more records as needed(1000,'Emily','Brown','emily.brown@example.com','555-0001' );

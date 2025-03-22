@@ -2,6 +2,7 @@ plugins {
     java
     id("org.springframework.boot") version "3.4.2"
     id("io.spring.dependency-management") version "1.1.7"
+    id("com.diffplug.spotless") version "7.0.0.BETA2"
 }
 
 group = "org.example"
@@ -35,4 +36,23 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+spotless {
+    kotlinGradle {
+        target("**/*.gradle.kts")
+        ktlint()
+    }
+    java {
+        target("**/*.java")
+        googleJavaFormat()
+    }
+    sql {
+        target("**/*.sql")
+        dbeaver()
+    }
+}
+
+tasks.named("build") {
+    dependsOn("spotlessApply") // This makes sure spotless runs before the build task
 }
