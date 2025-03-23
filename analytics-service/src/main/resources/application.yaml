@@ -3,6 +3,6 @@ spring:
     name: analytics-service
   datasource:
     url: jdbc:trino://localhost:8090
-    username: your_trino_username
-    password: your_trino_password
+    username: admin
+    password:
     driver-class-name: io.trino.jdbc.TrinoDriver
