@@ -5,25 +5,28 @@ services:
     image: mysql:9
     environment:
       MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_DATABASE: superset_db
-      MYSQL_USER: superset
-      MYSQL_PASSWORD: superset_password
+      MYSQL_DATABASE: customersdb
+      MYSQL_USER: customers-service-user
+      MYSQL_PASSWORD: customers-service-password
     ports:
       - "3306:3306"
     networks:
       - trino-network
     volumes:
-      - mysql_data:/var/lib/mysql
+      - mysql_data_v2:/var/lib/mysql
 
   postgres:
     image: postgres:17
     environment:
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: mydb
+      POSTGRES_USER: reservations-service-user
+      POSTGRES_PASSWORD: reservations-service-password
+      POSTGRES_DB: reservationsdb
     ports:
       - "5432:5432"
     networks:
       - trino-network
+    volumes:
+      - postgres_data_v2:/var/lib/postgresql/data
 
   mongo:
     image: mongo:latest
@@ -33,13 +36,13 @@ services:
     networks:
       - trino-network
     volumes:
-      - mongo_data:/data/db
+      - mongo_data_v1:/data/db
 
   trino:
     image: trinodb/trino:473
     container_name: trino
     ports:
-      - "8080:8090"
+      - "8090:8080"
     networks:
       - trino-network
     volumes:
@@ -50,7 +53,7 @@ networks:
     driver: bridge
 
 volumes:
-  postgres_data:
-  mongo_data:
-  mysql_data:
+  postgres_data_v2:
+  mongo_data_v1:
+  mysql_data_v2:
   trino:

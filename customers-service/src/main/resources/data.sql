@@ -1,3 +1,4 @@
+-- This is testing data
 -- Empty the table before inserting new data
 DELETE
 FROM
@@ -152,4 +153,4 @@ INSERT
         'Baker',
         'quincy.baker@example.com',
         '555-1250'
-    ), -- Add more records as needed(1000,'Emily','Brown','emily.brown@example.com','555-0001' );
+    );

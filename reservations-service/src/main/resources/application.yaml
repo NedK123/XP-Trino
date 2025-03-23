@@ -1,0 +1,21 @@
+server:
+  port: 8082
+
+Spring:
+  application:
+    name: reservations-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/reservationsdb
+    username: reservations-service-user
+    password: reservations-service-password
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+  sql:
+    init:
+      mode: always
