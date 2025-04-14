@@ -40,9 +40,8 @@ services:
     networks:
       - trino-network
     volumes:
-      - mongo_data_v1:/data/db
+#      - mongo_data_v10:/data/db
       - $PWD/retail-service/src/main/resources/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
-    restart: always
 
   trino:
     image: trinodb/trino:474
@@ -60,5 +59,5 @@ networks:
 
 volumes:
   postgres_data_v2:
-  mongo_data_v1:
+#  mongo_data_v10:
   mysql_data_v2:
