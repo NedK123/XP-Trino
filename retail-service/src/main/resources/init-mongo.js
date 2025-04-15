@@ -30,6 +30,11 @@ db.retail_records.insertMany([
       tracking_number: "TRK123456789",
       carrier: "FedEx",
     },
+    order_details: {
+      discount: { amount: 20, description: "Black Friday Discount" },
+      tax: { amount: 15, description: "Sales Tax" },
+      total_with_tax: 325,
+    },
   },
   {
     customer_id: 2,
@@ -45,6 +50,11 @@ db.retail_records.insertMany([
       delivery_date: new Date(),
       tracking_number: "TRK987654321",
       carrier: "UPS",
+    },
+    order_details: {
+      discount: { amount: 100, description: "Holiday Sale" },
+      tax: { amount: 120, description: "Sales Tax" },
+      total_with_tax: 1560,
     },
   },
   {
@@ -72,6 +82,11 @@ db.retail_records.insertMany([
       tracking_number: "TRK555666777",
       carrier: "DHL",
     },
+    order_details: {
+      discount: { amount: 5, description: "Summer Sale" },
+      tax: { amount: 8, description: "Sales Tax" },
+      total_with_tax: 113,
+    },
   },
   {
     customer_id: 4,
@@ -87,6 +102,11 @@ db.retail_records.insertMany([
       delivery_date: new Date(),
       tracking_number: "TRK444333222",
       carrier: "USPS",
+    },
+    order_details: {
+      discount: { amount: 50, description: "TV Promotion" },
+      tax: { amount: 95, description: "Sales Tax" },
+      total_with_tax: 1265,
     },
   },
   {
@@ -109,6 +129,11 @@ db.retail_records.insertMany([
       tracking_number: "TRK112233445",
       carrier: "Royal Mail",
     },
+    order_details: {
+      discount: { amount: 40, description: "Summer Discount" },
+      tax: { amount: 60, description: "Sales Tax" },
+      total_with_tax: 860,
+    },
   },
   {
     customer_id: 6,
@@ -124,6 +149,11 @@ db.retail_records.insertMany([
       delivery_date: new Date(),
       tracking_number: "TRK223344556",
       carrier: "FedEx",
+    },
+    order_details: {
+      discount: { amount: 75, description: "Special Offer" },
+      tax: { amount: 80, description: "Sales Tax" },
+      total_with_tax: 955,
     },
   },
   {
@@ -141,6 +171,11 @@ db.retail_records.insertMany([
       tracking_number: "TRK667788990",
       carrier: "UPS",
     },
+    order_details: {
+      discount: { amount: 30, description: "Winter Sale" },
+      tax: { amount: 25, description: "Sales Tax" },
+      total_with_tax: 570,
+    },
   },
   {
     customer_id: 8,
@@ -156,6 +191,11 @@ db.retail_records.insertMany([
       delivery_date: new Date(),
       tracking_number: "TRK998877665",
       carrier: "USPS",
+    },
+    order_details: {
+      discount: { amount: 10, description: "Discount Code" },
+      tax: { amount: 12, description: "Sales Tax" },
+      total_with_tax: 162,
     },
   },
   {
@@ -178,6 +218,11 @@ db.retail_records.insertMany([
       tracking_number: "TRK223355667",
       carrier: "DHL",
     },
+    order_details: {
+      discount: { amount: 5, description: "Promo Offer" },
+      tax: { amount: 3, description: "Sales Tax" },
+      total_with_tax: 38,
+    },
   },
   {
     customer_id: 10,
@@ -193,6 +238,11 @@ db.retail_records.insertMany([
       delivery_date: new Date(),
       tracking_number: "TRK112233667",
       carrier: "Royal Mail",
+    },
+    order_details: {
+      discount: { amount: 15, description: "New Year Sale" },
+      tax: { amount: 18, description: "Sales Tax" },
+      total_with_tax: 218,
     },
   },
 ]);

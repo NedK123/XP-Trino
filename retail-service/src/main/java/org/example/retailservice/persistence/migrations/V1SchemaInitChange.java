@@ -47,6 +47,11 @@ public class V1SchemaInitChange {
                         .append(
                             "type",
                             "row(\"delivery_date\" timestamp(3),\"tracking_number\" varchar,\"carrier\" varchar)")
+                        .append("hidden", false),
+                    new Document("name", "order_details")
+                        .append(
+                            "type",
+                            "row(\"discount\" row(\"amount\" double,\"description\" varchar),\"tax\" row(\"amount\" double,\"description\" varchar),\"total_with_tax\" double)")
                         .append("hidden", false)));
 
     mongoTemplate.getCollection("_schema").insertOne(schemaDocument);
