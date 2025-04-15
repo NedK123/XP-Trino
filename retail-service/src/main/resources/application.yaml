@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: retail-service
+  data:
+    mongodb:
+      uri: mongodb://retail-service-user:retail-service-password@localhost:27017/retaildb?serverSelectionTimeoutMS=2000&appName=mongosh+2.5.0&directConnection=true&authSource=retaildb
+
+mongock:
+  migration-scan-package:
+    - org.example.retailservice.persistence.migrations
+
+logging:
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG

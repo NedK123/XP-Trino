@@ -122,93 +122,31 @@ db.retail_records.insertMany([
     }
 ]);
 
-// Check if the _schema collection exists. If not, create it manually
-db.createCollection("_schema");
-
-// Create the _schema collection for the retail_records collection
-db.getCollection("_schema").insertOne({
-    table: "retail_records",
-    fields: [
-        {
-            name: "_id",
-            type: "ObjectId",
-            hidden: true
-        },
-        {
-            name: "customer_id",
-            type: "double",
-            hidden: false
-        },
-        {
-            name: "purchase_date",
-            type: "timestamp(3)",
-            hidden: false
-        },
-        {
-            name: "items",
-            type: "array(row(\"item_id\" varchar,\"item_name\" varchar,\"quantity\" double,\"price\" double))",
-            hidden: false
-        },
-        {
-            name: "total_amount",
-            type: "double",
-            hidden: false
-        },
-        {
-            name: "shipping_address",
-            type: "varchar",
-            hidden: false
-        },
-        {
-            name: "payment_method",
-            type: "varchar",
-            hidden: false
-        }
-    ]
-});
-
-
-// TODO to create a mongock migration files that basically adds a new field to the _schema
-db.getCollection("_schema").updateOne(
-    {table: "retail_records"},  // Query to find the document
-    {
-        $push: {  // Use $push to add a new field to the "fields" array
-            fields: {
-                name: "status",
-                type: "varchar",
-                hidden: false
-            }
-        }
-    }
-);
 
 // TODO then lets add some new records
-db.retail_records.insertMany([
-    {
-        customer_id: 11,
-        purchase_date: new Date(),
-        items: [
-            {item_id: "I001", item_name: "Smartwatch", quantity: 1, price: 250},
-            {item_id: "I002", item_name: "Wireless Earbuds", quantity: 1, price: 80}
-        ],
-        total_amount: 330,
-        shipping_address: "123 Elm St, Springfield, IL",
-        payment_method: "Credit Card",
-        status: "Completed"  // New field added
-    },
-    {
-        customer_id: 12,
-        purchase_date: new Date(),
-        items: [
-            {item_id: "I003", item_name: "Gaming Laptop", quantity: 1, price: 1500},
-            {item_id: "I004", item_name: "Laptop Cooler", quantity: 1, price: 40}
-        ],
-        total_amount: 1540,
-        shipping_address: "456 Oak Ave, New York, NY",
-        payment_method: "PayPal",
-        status: "Pending"  // New field added
-    }
-]);
-
-// TODO afterwards when querying trino it will automatically recognize the new field automatically and return null values for the old fields that do not have it
-
+// db.retail_records.insertMany([
+//     {
+//         customer_id: 11,
+//         purchase_date: new Date(),
+//         items: [
+//             {item_id: "I001", item_name: "Smartwatch", quantity: 1, price: 250},
+//             {item_id: "I002", item_name: "Wireless Earbuds", quantity: 1, price: 80}
+//         ],
+//         total_amount: 330,
+//         shipping_address: "123 Elm St, Springfield, IL",
+//         payment_method: "Credit Card",
+//         status: "Completed"  // New field added
+//     },
+//     {
+//         customer_id: 12,
+//         purchase_date: new Date(),
+//         items: [
+//             {item_id: "I003", item_name: "Gaming Laptop", quantity: 1, price: 1500},
+//             {item_id: "I004", item_name: "Laptop Cooler", quantity: 1, price: 40}
+//         ],
+//         total_amount: 1540,
+//         shipping_address: "456 Oak Ave, New York, NY",
+//         payment_method: "PayPal",
+//         status: "Pending"  // New field added
+//     }
+// ]);

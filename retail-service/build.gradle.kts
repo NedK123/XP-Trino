@@ -25,11 +25,20 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
+
+    implementation("io.mongock:mongock-springboot:5.5.1")
+    implementation("io.mongock:mongodb-springdata-v4-driver:5.5.1")
 
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
 }
 
 spotless {
@@ -40,10 +49,6 @@ spotless {
     java {
         target("**/*.java")
         googleJavaFormat()
-    }
-    sql {
-        target("**/*.sql")
-        dbeaver()
     }
 }
 
