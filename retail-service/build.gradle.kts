@@ -50,6 +50,10 @@ spotless {
         target("**/*.java")
         googleJavaFormat()
     }
+    javascript {
+        target("**/*.js")
+        prettier()
+    }
 }
 
 tasks.named("build") {

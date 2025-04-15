@@ -22,12 +22,7 @@ public class V2UpdateSchemaToIncludeStatus {
             Filters.eq("table", "retail_records"),
             Updates.push(
                 "fields",
-                new Document("name", "status")
-                    .append("type", "varchar")
-                    .append(
-                        "hidden",
-                        false))
-            );
+                new Document("name", "status").append("type", "varchar").append("hidden", false)));
   }
 
   @RollbackExecution
