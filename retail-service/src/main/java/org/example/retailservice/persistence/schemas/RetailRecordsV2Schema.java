@@ -7,7 +7,7 @@ import org.example.retailservice.persistence.schemas.fields.AbstractCompositeFie
 import org.example.retailservice.persistence.schemas.fields.FieldSchema;
 import org.example.retailservice.persistence.schemas.fields.SimpleFieldsFactory;
 
-public class RetailRecordsSchema implements Schema {
+public class RetailRecordsV2Schema implements Schema {
 
   @Override
   public Document asDoc() {
@@ -23,7 +23,8 @@ public class RetailRecordsSchema implements Schema {
                 new ShippingAddress().asDoc(),
                 new PaymentMethod().asDoc(),
                 new DeliveryInfo().asDoc(),
-                new OrderDetails().asDoc()));
+                new OrderDetails().asDoc(),
+                new Status().asDoc()));
   }
 
   public static class GenericId implements Schema {
@@ -178,6 +179,13 @@ public class RetailRecordsSchema implements Schema {
             SimpleFieldsFactory.generate("amount", "double"),
             SimpleFieldsFactory.generate("description", "varchar"));
       }
+    }
+  }
+
+  public static class Status implements Schema {
+    @Override
+    public Document asDoc() {
+      return new Document("name", "status").append("type", "varchar").append("hidden", false);
     }
   }
 }

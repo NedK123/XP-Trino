@@ -7,6 +7,7 @@ import io.mongock.api.annotations.Execution;
 import io.mongock.api.annotations.RollbackExecution;
 import lombok.AllArgsConstructor;
 import org.bson.Document;
+import org.example.retailservice.persistence.schemas.SchemaGenerator;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
 @AllArgsConstructor
@@ -18,11 +19,7 @@ public class V2UpdateSchemaToIncludeStatus {
   public void changeSet() {
     mongoTemplate
         .getCollection("_schema")
-        .updateOne(
-            Filters.eq("table", "retail_records"),
-            Updates.push(
-                "fields",
-                new Document("name", "status").append("type", "varchar").append("hidden", false)));
+        .replaceOne(Filters.eq("table", "retail_records"), SchemaGenerator.generate(2).asDoc());
   }
 
   @RollbackExecution

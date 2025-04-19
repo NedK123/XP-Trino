@@ -16,7 +16,7 @@ public class V1SchemaInitChange {
   @Execution
   public void changeSet() {
     mongoTemplate.createCollection("_schema");
-    mongoTemplate.getCollection("_schema").insertOne(SchemaGenerator.generate().asDoc());
+    mongoTemplate.getCollection("_schema").insertOne(SchemaGenerator.generate(1).asDoc());
   }
 
   @RollbackExecution
